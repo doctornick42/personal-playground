@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\BinaryTrees\BinarySearchTree.cs" />
+    <Compile Include="DataStructures\BinaryTrees\BinaryTree.cs" />
+    <Compile Include="DataStructures\BinaryTrees\BinaryTreeNode.cs" />
+    <Compile Include="DataStructures\BinaryTrees\Node.cs" />
+    <Compile Include="DataStructures\BinaryTrees\NodeList.cs" />
     <Compile Include="HelpingServices\Extensions\ArrayExtensions.cs" />
     <Compile Include="HelpingServices\TimeMeasurer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
