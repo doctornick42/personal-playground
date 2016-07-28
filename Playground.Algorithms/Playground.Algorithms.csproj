@@ -45,6 +45,10 @@
     <Compile Include="DataStructures\BinaryTrees\BinaryTreeNode.cs" />
     <Compile Include="DataStructures\BinaryTrees\Node.cs" />
     <Compile Include="DataStructures\BinaryTrees\NodeList.cs" />
+    <Compile Include="HelpingServices\BinaryTreeDrawers\ConsoleDrawer\BinaryTreeConsoleDrawer.cs" />
+    <Compile Include="HelpingServices\BinaryTreeDrawers\ConsoleDrawer\TreeNodeConsoleRepresentation.cs" />
+    <Compile Include="HelpingServices\BinaryTreeDrawers\ConsoleDrawer\TreeRowConsoleRepresentation.cs" />
+    <Compile Include="HelpingServices\BinaryTreeDrawers\Interfaces\IBinaryTreeDrawer.cs" />
     <Compile Include="HelpingServices\Extensions\ArrayExtensions.cs" />
     <Compile Include="HelpingServices\TimeMeasurer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

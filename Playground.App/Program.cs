@@ -1,19 +1,16 @@
 ﻿using Playground.Algorithms.HelpingServices;
 using Playground.Algorithms.Sorting;
 using Playground.Algorithms.Sorting.BubbleSorting;
-using Playground.Algorithms.Sorting.Infrastructure;
 using Playground.Algorithms.Sorting.QuickSorting;
 using Playground.Algorithms.Sorting.MergeSorting;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Playground.Algorithms.DataStructures.BinaryTrees;
+using Playground.Algorithms.HelpingServices.BinaryTreeDrawers.Interfaces;
+using Playground.Algorithms.HelpingServices.BinaryTreeDrawers.ConsoleDrawer;
 
 namespace Playground.App
 {
@@ -47,6 +44,11 @@ namespace Playground.App
 
         static void Main(string[] args)
         {
+            RunBinaryTreeConsoleDrawer(args);
+        }
+
+        private static void RunSortingServices(string[] args)
+        {
             SortingChecker<int> sortingChecker = new SortingChecker<int>();
             TimeMeasurer tm = new TimeMeasurer();
 
@@ -58,6 +60,33 @@ namespace Playground.App
             sortingRunner.Run(new BubbleSortingService<int>(), arrayToSort, tm, sortingChecker);
             sortingRunner.Run(new LomutoQuickSortingService<int>(), arrayToSort, tm, sortingChecker);
             sortingRunner.Run(new HoareQuickSortingService<int>(), arrayToSort, tm, sortingChecker);
+            Console.ReadLine();
+        }
+
+        private static void RunBinaryTreeConsoleDrawer(string[] args)
+        {
+            IBinaryTreeDrawer<int> binaryTreeDrawer = new BinaryTreeConsoleDrawer<int>();
+            BinaryTree<int> testTree = new BinaryTree<int>();
+
+            testTree.Root = new BinaryTreeNode<int>(1);
+            testTree.Root.Left = new BinaryTreeNode<int>(2);
+            testTree.Root.Right = new BinaryTreeNode<int>(3);
+            testTree.Root.Left.Left = new BinaryTreeNode<int>(4);
+            testTree.Root.Left.Right = new BinaryTreeNode<int>(5);
+            testTree.Root.Right.Left = new BinaryTreeNode<int>(3);
+            testTree.Root.Right.Right = new BinaryTreeNode<int>(2);
+            testTree.Root.Left.Left.Left = new BinaryTreeNode<int>(7);
+            testTree.Root.Left.Left.Right = new BinaryTreeNode<int>(5);
+            testTree.Root.Left.Right.Left = new BinaryTreeNode<int>(8);
+            testTree.Root.Left.Right.Right = new BinaryTreeNode<int>(9);
+            testTree.Root.Left.Left.Left.Left = new BinaryTreeNode<int>(4);
+            testTree.Root.Left.Left.Left.Right = new BinaryTreeNode<int>(8);
+            testTree.Root.Left.Left.Right.Left = new BinaryTreeNode<int>(0);
+            testTree.Root.Left.Left.Right.Right = new BinaryTreeNode<int>(1);
+            testTree.Root.Left.Right.Left.Left = new BinaryTreeNode<int>(5);
+            testTree.Root.Left.Right.Right.Left = new BinaryTreeNode<int>(3);
+
+            binaryTreeDrawer.Draw(testTree);
             Console.ReadLine();
         }
 
