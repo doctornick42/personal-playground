@@ -19,7 +19,7 @@ namespace Playground.Algorithms.DataStructures.BinaryTrees
             _comparer = comparer;
         }
 
-        public bool Containts(T data)
+        public bool Contains(T data)
         {
             BinaryTreeNode<T> current = Root;
             int result;
